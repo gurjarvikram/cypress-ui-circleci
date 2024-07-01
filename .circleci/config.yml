@@ -11,4 +11,4 @@ workflows:
             - cypress/install
           start-command: 'npm run start'
           cypress-command: 'npx cypress run --spec "cypress/e2e/product.feature" --parallel --record --group smoke-tests'
-          parallelism: 2
+          parallelism: 3
