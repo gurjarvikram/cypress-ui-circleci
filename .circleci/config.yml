@@ -1,20 +1,14 @@
 version: 2.1
+orbs:
+  cypress: cypress-io/cypress@3
 
-jobs:
+workflows:
   build:
-    machine:
-      image: ubuntu-2004:202201-01
-    steps:
-      - checkout
-    
-      - run:
-          name: Install dependencies
-          command: npm install
-          
-      - run:
-          name: Cypress install
-          command: npx cypress install
-          
-      - run:
-          name: Run tests
-          command: npx cypress run
+    jobs:
+      - cypress/install
+      - cypress/run:
+          requires:
+            - cypress/install
+          start-command: 'npm run start'
+          cypress-command: 'npx cypress run --spec "cypress/e2e/product.feature" --parallel --record --group smoke-tests'
+          parallelism: 2
