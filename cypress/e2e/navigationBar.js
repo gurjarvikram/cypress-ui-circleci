@@ -1,6 +1,6 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor"
-import loginPage from "../../pageobject/loginPage"
-import productPage from "../../pageobject/productPage"
+import loginPage from "../pageobject/loginPage";
+import productPage from "../pageobject/productPage"
 
 
 Given('The user logged in and navigated to the product page', () => {
