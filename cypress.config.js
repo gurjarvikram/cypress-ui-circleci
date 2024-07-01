@@ -24,7 +24,7 @@ const createEsbuildPlugin =
       return config;
     },
     projectId: 'qtn3kc',
-    specPattern: 'cypress/e2e/*/*.feature',
+    specPattern: 'cypress/e2e/*.feature',
     viewportWidth: 1880,
     viewportHeight: 882,   
     experimentalModifyObstructiveThirdPartyCode: true,
